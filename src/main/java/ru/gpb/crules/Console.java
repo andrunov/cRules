@@ -1,9 +1,16 @@
 package ru.gpb.crules;
 
+import org.camunda.bpm.dmn.engine.DmnDecision;
+import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
+import org.camunda.bpm.dmn.engine.DmnEngine;
+import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
+import org.camunda.bpm.engine.variable.VariableMap;
+import org.camunda.bpm.engine.variable.Variables;
 import ru.gpb.crules.businessModel.*;
 import ru.gpb.crules.exception.ParseException;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -14,16 +21,32 @@ public class Console {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchFieldException, ParseException, InvocationTargetException, IllegalAccessException {
 
+        VariableMap variables = prepareVariableMap(initRequest());
+
+        // parse decision from resource input stream
+        InputStream inputStream = BeveragesDecider.class.getResourceAsStream("creditRules.dmn");
+
+        try {
+            parseAndEvaluateDecision(variables, inputStream);
+
+        } finally {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+            }
+        }
     }
 
-    private CreditRequest initRequest() {
+    private static CreditRequest initRequest() {
         CreditRequest creditRequest = new CreditRequest();
+        creditRequest.setProgramCode("1.23.01");
+        creditRequest.setCreditQty(350000);
         Calendar calendar = new GregorianCalendar(2024,Calendar.JULY, 1);
         creditRequest.setApplicDate(calendar);
         creditRequest.setPrepayPercent(-1);
         Borrower borrower = new Borrower();
         borrower.setSalaryClient(true);
-       // borrower.setBorrowerType(BorrowerType.GAZPROM);
+        borrower.setBorrowerType(BorrowerType.GAZPROM);
         creditRequest.setBorrower(borrower);
         return creditRequest;
     }
@@ -98,5 +121,38 @@ public class Console {
         creditRequest.setPrepayPercent(-1);
         creditRequest.setMarketType(null);
     }
+
+    protected static VariableMap prepareVariableMap(CreditRequest creditRequest) {
+
+        String programCode = creditRequest.getProgramCode();
+        String borrowerType = creditRequest.getBorrower().getBorrowerType().toString();
+        boolean salaryClient = creditRequest.getBorrower().isSalaryClient();
+        double creditQty = creditRequest.getCreditQty();
+
+        // prepare variables for decision evaluation
+        VariableMap variables = Variables
+                .putValue("programCode", programCode)
+                .putValue("borrowerType", borrowerType)
+                .putValue("salaryClient", salaryClient)
+                .putValue("creditQty", creditQty);
+
+        return variables;
+    }
+
+    protected static void parseAndEvaluateDecision(VariableMap variables, InputStream inputStream) {
+
+        // create a new default DMN engine
+        DmnEngine dmnEngine = DmnEngineConfiguration.createDefaultDmnEngineConfiguration().buildEngine();
+
+        DmnDecision decision = dmnEngine.parseDecision("Decision_16niphj", inputStream);
+
+        // evaluate decision
+        DmnDecisionTableResult result = dmnEngine.evaluateDecisionTable(decision, variables);
+
+        // print result
+        double rate = result.getSingleEntry();
+        System.out.println("Rate is: " + rate);
+    }
+
 
 }
