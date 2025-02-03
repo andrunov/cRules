@@ -1,9 +1,6 @@
 package ru.gpb.crules;
 
-import org.camunda.bpm.dmn.engine.DmnDecision;
-import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
-import org.camunda.bpm.dmn.engine.DmnEngine;
-import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
+import org.camunda.bpm.dmn.engine.*;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.Variables;
 import ru.gpb.crules.businessModel.*;
@@ -40,7 +37,7 @@ public class Console {
     private static CreditRequest initRequest() {
         CreditRequest creditRequest = new CreditRequest();
         creditRequest.setProgramCode("1.23.01");
-        creditRequest.setCreditQty(350000);
+        creditRequest.setCreditQty(400000);
         Calendar calendar = new GregorianCalendar(2024,Calendar.JULY, 1);
         creditRequest.setApplicDate(calendar);
         creditRequest.setPrepayPercent(-1);
@@ -144,10 +141,11 @@ public class Console {
         // create a new default DMN engine
         DmnEngine dmnEngine = DmnEngineConfiguration.createDefaultDmnEngineConfiguration().buildEngine();
 
-        DmnDecision decision = dmnEngine.parseDecision("Decision_16niphj", inputStream);
+        //DmnDecision decision1 = dmnEngine.parseDecision("rate", inputStream);
+        DmnDecision decision2 = dmnEngine.parseDecision("final", inputStream);
 
         // evaluate decision
-        DmnDecisionTableResult result = dmnEngine.evaluateDecisionTable(decision, variables);
+        DmnDecisionResult result = dmnEngine.evaluateDecision(decision2, variables);
 
         // print result
         double rate = result.getSingleEntry();
