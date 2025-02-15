@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
@@ -21,7 +22,7 @@ public class Console {
         VariableMap variables = prepareVariableMap(initRequest());
 
         // parse decision from resource input stream
-        InputStream inputStream = BeveragesDecider.class.getResourceAsStream("creditRules.dmn");
+        InputStream inputStream = BeveragesDecider.class.getResourceAsStream("1_23_01.dmn");
 
         try {
             parseAndEvaluateDecision(variables, inputStream);
@@ -37,12 +38,12 @@ public class Console {
     private static CreditRequest initRequest() {
         CreditRequest creditRequest = new CreditRequest();
         creditRequest.setProgramCode("1.23.01");
-        creditRequest.setCreditQty(400000);
-        Calendar calendar = new GregorianCalendar(2024,Calendar.JULY, 1);
+        creditRequest.setCreditQty(100005);
+        Calendar calendar = new GregorianCalendar(2024,Calendar.JANUARY, 1);
         creditRequest.setApplicDate(calendar);
         creditRequest.setPrepayPercent(-1);
         Borrower borrower = new Borrower();
-        borrower.setSalaryClient(true);
+        borrower.setSalaryClient(false);
         borrower.setBorrowerType(BorrowerType.GAZPROM);
         creditRequest.setBorrower(borrower);
         return creditRequest;
@@ -121,14 +122,14 @@ public class Console {
 
     protected static VariableMap prepareVariableMap(CreditRequest creditRequest) {
 
-        String programCode = creditRequest.getProgramCode();
+        Date applicDate = creditRequest.getApplicDate().getTime();
         String borrowerType = creditRequest.getBorrower().getBorrowerType().toString();
         boolean salaryClient = creditRequest.getBorrower().isSalaryClient();
         double creditQty = creditRequest.getCreditQty();
 
         // prepare variables for decision evaluation
         VariableMap variables = Variables
-                .putValue("programCode", programCode)
+                .putValue("applicDate", applicDate)
                 .putValue("borrowerType", borrowerType)
                 .putValue("salaryClient", salaryClient)
                 .putValue("creditQty", creditQty);
