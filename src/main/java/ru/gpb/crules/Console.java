@@ -39,7 +39,7 @@ public class Console {
         CreditRequest creditRequest = new CreditRequest();
         creditRequest.setProgramCode("1.23.01");
         creditRequest.setCreditQty(100005);
-        Calendar calendar = new GregorianCalendar(2024,Calendar.JANUARY, 1);
+        Calendar calendar = new GregorianCalendar(2024,Calendar.FEBRUARY, 1);
         creditRequest.setApplicDate(calendar);
         creditRequest.setPrepayPercent(-1);
         Borrower borrower = new Borrower();

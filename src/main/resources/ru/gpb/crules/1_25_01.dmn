@@ -40,7 +40,7 @@
           <text>[50000..100000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ajebpc">
-          <text>8.1</text>
+          <text>8.3</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_14a9neb">
@@ -57,7 +57,7 @@
           <text>[100000..300000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_193qexb">
-          <text>8.2</text>
+          <text>8.4</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_050eko7">
@@ -74,7 +74,7 @@
           <text>[300000..1000000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1mg2j7g">
-          <text>8.3</text>
+          <text>8.5</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_18fg658">
@@ -91,7 +91,7 @@
           <text>[1000000..3000000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0w6h0x1">
-          <text>8.4</text>
+          <text>8.6</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_16i4uok">
@@ -108,7 +108,7 @@
           <text>[3000000..5000000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0mndlqy">
-          <text>8.5</text>
+          <text>8.7</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0uj0d5q">
@@ -125,7 +125,7 @@
           <text>[50000..100000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1a9wzhe">
-          <text>8.2</text>
+          <text>8.4</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1a7cmx6">
@@ -142,7 +142,7 @@
           <text>[100000..300000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1jyflzj">
-          <text>8.3</text>
+          <text>8.5</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0wgaaz4">
@@ -159,7 +159,7 @@
           <text>[300000..1000000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0slyrw1">
-          <text>8.4</text>
+          <text>8.6</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_04oxxb7">
@@ -176,7 +176,7 @@
           <text>[1000000..3000000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0pgep59">
-          <text>8.5</text>
+          <text>8.7</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0veqagg">
@@ -193,7 +193,7 @@
           <text>[3000000..5000000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0orfpv0">
-          <text>8.6</text>
+          <text>8.8</text>
         </outputEntry>
       </rule>
     </decisionTable>
@@ -207,7 +207,7 @@
       <requiredDecision href="#feb_24" />
     </informationRequirement>
     <informationRequirement id="InformationRequirement_1x2vb2d">
-      <requiredDecision href="#mar_24" />
+      <requiredDecision href="#Decision_1u5ieco" />
     </informationRequirement>
     <literalExpression id="LiteralExpression_1nvh41i">
       <text>if rate != null then rate else -1</text>
@@ -245,7 +245,7 @@
           <text>[50000..100000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bcs8hv">
-          <text>9.1</text>
+          <text>9.3</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1sgkfbd">
@@ -259,7 +259,7 @@
           <text>[100000..200000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1e9pomm">
-          <text>9.2</text>
+          <text>9.4</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_04tvvxz">
@@ -273,7 +273,7 @@
           <text>[200000..300000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0xb50bv">
-          <text>9.3</text>
+          <text>9.5</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_19p073r">
@@ -287,7 +287,7 @@
           <text>[300000..400000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02dt9yn">
-          <text>9.4</text>
+          <text>9.6</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1p0ep25">
@@ -301,7 +301,7 @@
           <text>[400000..500000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0uvkr4o">
-          <text>9.5</text>
+          <text>9.7</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0v6o4ot">
@@ -315,7 +315,7 @@
           <text>[500000..600000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1po8i7n">
-          <text>9.6</text>
+          <text>9.8</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0j9uwqs">
@@ -329,7 +329,7 @@
           <text>[600000..700000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1oqoq2f">
-          <text>9.7</text>
+          <text>9.9</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0d0qf8e">
@@ -343,7 +343,7 @@
           <text>[700000..800000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0q6h79c">
-          <text>9.8</text>
+          <text>10</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1lqwr38">
@@ -357,7 +357,7 @@
           <text>[800000..900000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1b8mfmu">
-          <text>9.9</text>
+          <text>10.1</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_04z7ks6">
@@ -371,14 +371,14 @@
           <text>[900000..1000000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ps6792">
-          <text>10</text>
+          <text>10.2</text>
         </outputEntry>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="mar_24" name="marth_24">
+  <decision id="Decision_1u5ieco" name="marth_24">
     <decisionTable id="DecisionTable_1phi104">
-      <input id="InputClause_012abx5" biodi:width="215">
+      <input id="InputClause_012abx5">
         <inputExpression id="LiteralExpression_1fdbbyd" typeRef="date">
           <text>applicDate</text>
         </inputExpression>
@@ -408,7 +408,7 @@
           <text>[50000..100000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1a64s17">
-          <text>8.7</text>
+          <text>8.9</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1sgwdwo">
@@ -422,7 +422,7 @@
           <text>[100000..200000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0heifv9">
-          <text>8.9</text>
+          <text>9.1</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1yhobls">
@@ -436,7 +436,7 @@
           <text>[200000..300000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_020fo39">
-          <text>9.1</text>
+          <text>9.3</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0k4vig9">
@@ -450,7 +450,7 @@
           <text>[300000..400000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wkxbgh">
-          <text>9.3</text>
+          <text>9.5</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_167bk6e">
@@ -464,7 +464,7 @@
           <text>[400000..500000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_190i5ev">
-          <text>9.5</text>
+          <text>9.7</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_07cki5d">
@@ -478,7 +478,7 @@
           <text>[500000..600000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0b6ksii">
-          <text>9.7</text>
+          <text>9.9</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1cm27b4">
@@ -492,7 +492,7 @@
           <text>[600000..700000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0f61yjs">
-          <text>9.9</text>
+          <text>10.1</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_18cqha7">
@@ -506,7 +506,7 @@
           <text>[700000..800000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0h4qsvz">
-          <text>10.1</text>
+          <text>10.3</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1mijvmj">
@@ -520,7 +520,7 @@
           <text>[800000..900000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_069734m">
-          <text>10.3</text>
+          <text>10.5</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_19lrg6b">
@@ -534,7 +534,7 @@
           <text>[900000..1000000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1u1jjbu">
-          <text>10.5</text>
+          <text>10.7</text>
         </outputEntry>
       </rule>
     </decisionTable>
@@ -565,7 +565,7 @@
         <di:waypoint x="765" y="210" />
         <di:waypoint x="765" y="190" />
       </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_023ebqd" dmnElementRef="mar_24">
+      <dmndi:DMNShape id="DMNShape_023ebqd" dmnElementRef="Decision_1u5ieco">
         <dc:Bounds height="80" width="180" x="1060" y="280" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
