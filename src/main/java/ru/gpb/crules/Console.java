@@ -1,6 +1,9 @@
 package ru.gpb.crules;
 
-import org.camunda.bpm.dmn.engine.*;
+import org.camunda.bpm.dmn.engine.DmnDecision;
+import org.camunda.bpm.dmn.engine.DmnDecisionResult;
+import org.camunda.bpm.dmn.engine.DmnEngine;
+import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.Variables;
 import ru.gpb.crules.businessModel.*;
@@ -22,7 +25,7 @@ public class Console {
         VariableMap variables = prepareVariableMap(initRequest());
 
         // parse decision from resource input stream
-        InputStream inputStream = BeveragesDecider.class.getResourceAsStream("1_23_01.dmn");
+        InputStream inputStream = Console.class.getResourceAsStream("1_23_01.dmn");
 
         try {
             parseAndEvaluateDecision(variables, inputStream);

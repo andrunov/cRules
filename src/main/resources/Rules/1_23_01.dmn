@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="creditRules" name="CreditRules" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.31.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.22.0">
-  <decision id="rate_1_23_01" name="Rate 1.23.01">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="creditRules" name="CreditRules" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.31.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.22.0">
+  <decision id="jan_24" name="janvary_24">
     <decisionTable id="DecisionTable_13dwh0f">
-      <input id="Input_1">
-        <inputExpression id="InputExpression_1" typeRef="string">
-          <text>programCode</text>
+      <input id="Input_1" biodi:width="192">
+        <inputExpression id="InputExpression_1" typeRef="date">
+          <text>applicDate</text>
         </inputExpression>
-        <inputValues id="UnaryTests_12vw19z">
-          <text>"1.23.01"</text>
-        </inputValues>
       </input>
       <input id="InputClause_0fdptss">
         <inputExpression id="LiteralExpression_19gv7oi" typeRef="string">
@@ -31,7 +28,7 @@
       <output id="Output_1" name="rate" typeRef="double" />
       <rule id="DecisionRule_1iygl0c">
         <inputEntry id="UnaryTests_1ozadgn">
-          <text>"1.23.01"</text>
+          <text>[date and time("2024-01-01T00:00:00")..date and time("2024-01-31T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0f3sdzm">
           <text>"GAZPROM"</text>
@@ -48,7 +45,7 @@
       </rule>
       <rule id="DecisionRule_14a9neb">
         <inputEntry id="UnaryTests_19waxf8">
-          <text>"1.23.01"</text>
+          <text>[date and time("2024-01-01T00:00:00")..date and time("2024-01-31T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nx0dz2">
           <text>"GAZPROM"</text>
@@ -65,7 +62,7 @@
       </rule>
       <rule id="DecisionRule_050eko7">
         <inputEntry id="UnaryTests_0w51mbk">
-          <text>"1.23.01"</text>
+          <text>[date and time("2024-01-01T00:00:00")..date and time("2024-01-31T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1x3pmia">
           <text>"GAZPROM"</text>
@@ -82,7 +79,7 @@
       </rule>
       <rule id="DecisionRule_18fg658">
         <inputEntry id="UnaryTests_0weabg7">
-          <text>"1.23.01"</text>
+          <text>[date and time("2024-01-01T00:00:00")..date and time("2024-01-31T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_084ectp">
           <text>"GAZPROM"</text>
@@ -99,7 +96,7 @@
       </rule>
       <rule id="DecisionRule_16i4uok">
         <inputEntry id="UnaryTests_1bjg46z">
-          <text>"1.23.01"</text>
+          <text>[date and time("2024-01-01T00:00:00")..date and time("2024-01-31T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0or03wa">
           <text>"GAZPROM"</text>
@@ -116,7 +113,7 @@
       </rule>
       <rule id="DecisionRule_0uj0d5q">
         <inputEntry id="UnaryTests_1sopbsj">
-          <text>"1.23.01"</text>
+          <text>[date and time("2024-01-01T00:00:00")..date and time("2024-01-31T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04ug7pb">
           <text>"GAZPROM"</text>
@@ -133,7 +130,7 @@
       </rule>
       <rule id="DecisionRule_1a7cmx6">
         <inputEntry id="UnaryTests_05sxwi8">
-          <text>"1.23.01"</text>
+          <text>[date and time("2024-01-01T00:00:00")..date and time("2024-01-31T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0nfyod4">
           <text>"GAZPROM"</text>
@@ -150,7 +147,7 @@
       </rule>
       <rule id="DecisionRule_0wgaaz4">
         <inputEntry id="UnaryTests_1un6oyt">
-          <text>"1.23.01"</text>
+          <text>[date and time("2024-01-01T00:00:00")..date and time("2024-01-31T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gqct7j">
           <text>"GAZPROM"</text>
@@ -167,7 +164,7 @@
       </rule>
       <rule id="DecisionRule_04oxxb7">
         <inputEntry id="UnaryTests_1upvgi6">
-          <text>"1.23.01"</text>
+          <text>[date and time("2024-01-01T00:00:00")..date and time("2024-01-31T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0rbaakv">
           <text>"GAZPROM"</text>
@@ -184,7 +181,7 @@
       </rule>
       <rule id="DecisionRule_0veqagg">
         <inputEntry id="UnaryTests_061klc0">
-          <text>"1.23.01"</text>
+          <text>[date and time("2024-01-01T00:00:00")..date and time("2024-01-31T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1uxurb1">
           <text>"GAZPROM"</text>
@@ -203,25 +200,25 @@
   </decision>
   <decision id="final" name="Final">
     <variable id="InformationItem_1ooi5q6" name="Final" typeRef="double" />
-    <informationRequirement id="InformationRequirement_0vw720x">
-      <requiredDecision href="#rate_1_24_01" />
+    <informationRequirement id="InformationRequirement_0uy2l0w">
+      <requiredDecision href="#jan_24" />
     </informationRequirement>
-    <informationRequirement id="InformationRequirement_1jvknj3">
-      <requiredDecision href="#rate_1_23_01" />
+    <informationRequirement id="InformationRequirement_0vw720x">
+      <requiredDecision href="#feb_24" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1x2vb2d">
+      <requiredDecision href="#mar_24" />
     </informationRequirement>
     <literalExpression id="LiteralExpression_1nvh41i">
       <text>if rate != null then rate else -1</text>
     </literalExpression>
   </decision>
-  <decision id="rate_1_24_01" name="Rate 1.24.01">
+  <decision id="feb_24" name="february_24">
     <decisionTable id="DecisionTable_13yh9hc">
       <input id="InputClause_05zfxwn">
-        <inputExpression id="LiteralExpression_03a3lnb" typeRef="string">
-          <text>programCode</text>
+        <inputExpression id="LiteralExpression_03a3lnb" typeRef="date">
+          <text>applicDate</text>
         </inputExpression>
-        <inputValues id="UnaryTests_0ghojn0">
-          <text>"1.24.01"</text>
-        </inputValues>
       </input>
       <input id="InputClause_19k3aig">
         <inputExpression id="LiteralExpression_1orqite" typeRef="string">
@@ -239,7 +236,7 @@
       <output id="OutputClause_07tjdcd" name="rate" typeRef="double" />
       <rule id="DecisionRule_1ujeonb">
         <inputEntry id="UnaryTests_0tpo1d2">
-          <text>"1.24.01"</text>
+          <text>[date and time("2024-02-01T00:00:00")..date and time("2024-02-29T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0nol4ev">
           <text>"GAZPROM"</text>
@@ -253,7 +250,7 @@
       </rule>
       <rule id="DecisionRule_1sgkfbd">
         <inputEntry id="UnaryTests_13mmaad">
-          <text>"1.24.01"</text>
+          <text>[date and time("2024-02-01T00:00:00")..date and time("2024-02-29T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_03164w7">
           <text>"GAZPROM"</text>
@@ -267,7 +264,7 @@
       </rule>
       <rule id="DecisionRule_04tvvxz">
         <inputEntry id="UnaryTests_02hrfz1">
-          <text>"1.24.01"</text>
+          <text>[date and time("2024-02-01T00:00:00")..date and time("2024-02-29T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1k3snhj">
           <text>"GAZPROM"</text>
@@ -281,7 +278,7 @@
       </rule>
       <rule id="DecisionRule_19p073r">
         <inputEntry id="UnaryTests_05nt8fo">
-          <text>"1.24.01"</text>
+          <text>[date and time("2024-02-01T00:00:00")..date and time("2024-02-29T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ry4t67">
           <text>"GAZPROM"</text>
@@ -295,7 +292,7 @@
       </rule>
       <rule id="DecisionRule_1p0ep25">
         <inputEntry id="UnaryTests_04247aa">
-          <text>"1.24.01"</text>
+          <text>[date and time("2024-02-01T00:00:00")..date and time("2024-02-29T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1t9cv3r">
           <text>"GAZPROM"</text>
@@ -309,7 +306,7 @@
       </rule>
       <rule id="DecisionRule_0v6o4ot">
         <inputEntry id="UnaryTests_0j7qngu">
-          <text>"1.24.01"</text>
+          <text>[date and time("2024-02-01T00:00:00")..date and time("2024-02-29T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nx1ghi">
           <text>"GAZPROM"</text>
@@ -323,7 +320,7 @@
       </rule>
       <rule id="DecisionRule_0j9uwqs">
         <inputEntry id="UnaryTests_1rk4svk">
-          <text>"1.24.01"</text>
+          <text>[date and time("2024-02-01T00:00:00")..date and time("2024-02-29T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ivj5xy">
           <text>"GAZPROM"</text>
@@ -337,7 +334,7 @@
       </rule>
       <rule id="DecisionRule_0d0qf8e">
         <inputEntry id="UnaryTests_006rkf8">
-          <text>"1.24.01"</text>
+          <text>[date and time("2024-02-01T00:00:00")..date and time("2024-02-29T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09f31co">
           <text>"GAZPROM"</text>
@@ -351,13 +348,13 @@
       </rule>
       <rule id="DecisionRule_1lqwr38">
         <inputEntry id="UnaryTests_08c078r">
-          <text>"1.24.01"</text>
+          <text>[date and time("2024-02-01T00:00:00")..date and time("2024-02-29T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pndnak">
           <text>"GAZPROM"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1w4wu30">
-          <text>[900000..1000000[</text>
+          <text>[800000..900000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1b8mfmu">
           <text>9.9</text>
@@ -365,13 +362,13 @@
       </rule>
       <rule id="DecisionRule_04z7ks6">
         <inputEntry id="UnaryTests_15kncwl">
-          <text>"1.24.01"</text>
+          <text>[date and time("2024-02-01T00:00:00")..date and time("2024-02-29T00:00:00")]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10iww3l">
           <text>"GAZPROM"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ywnewc">
-          <text>[1000000..3000000[</text>
+          <text>[900000..1000000[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ps6792">
           <text>10</text>
@@ -379,27 +376,198 @@
       </rule>
     </decisionTable>
   </decision>
+  <decision id="mar_24" name="marth_24">
+    <decisionTable id="DecisionTable_1phi104">
+      <input id="InputClause_012abx5" biodi:width="215">
+        <inputExpression id="LiteralExpression_1fdbbyd" typeRef="date">
+          <text>applicDate</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_16m7bwr">
+        <inputExpression id="LiteralExpression_1tf4hbr" typeRef="string">
+          <text>borrowerType</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_19cbmbc">
+          <text>"GAZPROM","GAZPROM_GROUP","BANK"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1j4imcz">
+        <inputExpression id="LiteralExpression_0oop5k0" typeRef="double">
+          <text>creditQty</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0ax64vz" name="rate" typeRef="double" />
+      <rule id="DecisionRule_0f8j5se">
+        <inputEntry id="UnaryTests_0n1zctm">
+          <text>[date and time("2024-03-01T00:00:00")..date and time("2024-03-31T00:00:00")]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rr2dy5">
+          <text>"GAZPROM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nsui49">
+          <text>[50000..100000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a64s17">
+          <text>8.7</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sgwdwo">
+        <inputEntry id="UnaryTests_0kg8gsm">
+          <text>[date and time("2024-03-01T00:00:00")..date and time("2024-03-31T00:00:00")]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sejttv">
+          <text>"GAZPROM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v3hb5u">
+          <text>[100000..200000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0heifv9">
+          <text>8.9</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yhobls">
+        <inputEntry id="UnaryTests_0xzjoml">
+          <text>[date and time("2024-03-01T00:00:00")..date and time("2024-03-31T00:00:00")]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17oiph4">
+          <text>"GAZPROM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17xom3g">
+          <text>[200000..300000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_020fo39">
+          <text>9.1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0k4vig9">
+        <inputEntry id="UnaryTests_0pedxlu">
+          <text>[date and time("2024-03-01T00:00:00")..date and time("2024-03-31T00:00:00")]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xppr7e">
+          <text>"GAZPROM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06s18ce">
+          <text>[300000..400000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wkxbgh">
+          <text>9.3</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_167bk6e">
+        <inputEntry id="UnaryTests_1mohv5r">
+          <text>[date and time("2024-03-01T00:00:00")..date and time("2024-03-31T00:00:00")]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07iw3xw">
+          <text>"GAZPROM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0osatt3">
+          <text>[400000..500000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_190i5ev">
+          <text>9.5</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07cki5d">
+        <inputEntry id="UnaryTests_1vzjdi8">
+          <text>[date and time("2024-03-01T00:00:00")..date and time("2024-03-31T00:00:00")]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d6dgsw">
+          <text>"GAZPROM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17gi2sd">
+          <text>[500000..600000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b6ksii">
+          <text>9.7</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cm27b4">
+        <inputEntry id="UnaryTests_0ka35lj">
+          <text>[date and time("2024-03-01T00:00:00")..date and time("2024-03-31T00:00:00")]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f2u2lt">
+          <text>"GAZPROM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pew92j">
+          <text>[600000..700000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f61yjs">
+          <text>9.9</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18cqha7">
+        <inputEntry id="UnaryTests_1c6w4l5">
+          <text>[date and time("2024-03-01T00:00:00")..date and time("2024-03-31T00:00:00")]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r4vpbs">
+          <text>"GAZPROM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xs0b8s">
+          <text>[700000..800000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0h4qsvz">
+          <text>10.1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mijvmj">
+        <inputEntry id="UnaryTests_1czora0">
+          <text>[date and time("2024-03-01T00:00:00")..date and time("2024-03-31T00:00:00")]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tuyoda">
+          <text>"GAZPROM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cjguar">
+          <text>[800000..900000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_069734m">
+          <text>10.3</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19lrg6b">
+        <inputEntry id="UnaryTests_0uao4cx">
+          <text>[date and time("2024-03-01T00:00:00")..date and time("2024-03-31T00:00:00")]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pxofhi">
+          <text>"GAZPROM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1leb29y">
+          <text>[900000..1000000[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u1jjbu">
+          <text>10.5</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
-      <dmndi:DMNShape dmnElementRef="rate_1_23_01">
+      <dmndi:DMNShape dmnElementRef="jan_24">
         <dc:Bounds height="80" width="180" x="160" y="270" />
       </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1e10d4b" dmnElementRef="InformationRequirement_0uy2l0w">
+        <di:waypoint x="250" y="270" />
+        <di:waypoint x="675" y="210" />
+        <di:waypoint x="675" y="190" />
+      </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_1ieblmx" dmnElementRef="final">
-        <dc:Bounds height="80" width="180" x="380" y="110" />
+        <dc:Bounds height="80" width="180" x="630" y="110" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_1uxqo31" dmnElementRef="rate_1_24_01">
+      <dmndi:DMNShape id="DMNShape_1uxqo31" dmnElementRef="feb_24">
         <dc:Bounds height="80" width="180" x="630" y="280" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_1ffpr9o" dmnElementRef="InformationRequirement_0vw720x">
         <di:waypoint x="720" y="280" />
-        <di:waypoint x="500" y="210" />
-        <di:waypoint x="500" y="190" />
+        <di:waypoint x="720" y="210" />
+        <di:waypoint x="720" y="190" />
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_1ny3pol" dmnElementRef="InformationRequirement_1jvknj3">
-        <di:waypoint x="250" y="270" />
-        <di:waypoint x="440" y="210" />
-        <di:waypoint x="440" y="190" />
+      <dmndi:DMNEdge id="DMNEdge_0zwjtuv" dmnElementRef="InformationRequirement_1x2vb2d">
+        <di:waypoint x="1150" y="280" />
+        <di:waypoint x="765" y="210" />
+        <di:waypoint x="765" y="190" />
       </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_023ebqd" dmnElementRef="mar_24">
+        <dc:Bounds height="80" width="180" x="1060" y="280" />
+      </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>

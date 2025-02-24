@@ -3,6 +3,8 @@ package ru.gpb.crules.web;
 import jakarta.validation.Valid;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.camunda.bpm.engine.variable.VariableMap;
+import org.camunda.bpm.engine.variable.Variables;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,7 @@ import ru.gpb.crules.ruleEngine.RuleEngine;
 import ru.gpb.crules.validation.ErrorValidation;
 
 import java.net.URI;
+import java.util.Date;
 
 @RestController
 @RequestMapping(value = RulesController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -31,8 +34,11 @@ public class RulesController {
     public ResponseEntity<Response> createWithLocation(@Valid @RequestBody CreditRequest creditRequest) {
         LOG.info(creditRequest);
 
+        VariableMap variables = prepareVariableMap(creditRequest);
         CreditProgram creditProgram = new CreditProgram();
-        String rulesReport = ruleEngine.performRules(creditRequest , creditProgram);
+
+        double rate = ruleEngine.performRules(creditRequest, variables);
+        creditProgram.setRate(rate);
 
         ErrorValidation errorValidation = new ErrorValidation(creditRequest, creditProgram);
         String errorMessage = errorValidation.validate();
@@ -42,11 +48,28 @@ public class RulesController {
         response.creditProgram = creditProgram;
         response.errors = errorMessage;
         response.warnings = "";
-        response.info = rulesReport;
+        response.info = "";
 
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(REST_URL).buildAndExpand().toUri();
         return ResponseEntity.created(uriOfNewResource).body(response);
+    }
+
+    private VariableMap prepareVariableMap(CreditRequest creditRequest) {
+
+        Date applicDate = creditRequest.getApplicDate().getTime();
+        String borrowerType = creditRequest.getBorrower().getBorrowerType().toString();
+        boolean salaryClient = creditRequest.getBorrower().isSalaryClient();
+        double creditQty = creditRequest.getCreditQty();
+
+        // prepare variables for decision evaluation
+        VariableMap variables = Variables
+                .putValue("applicDate", applicDate)
+                .putValue("borrowerType", borrowerType)
+                .putValue("salaryClient", salaryClient)
+                .putValue("creditQty", creditQty);
+
+        return variables;
     }
 
     @GetMapping
